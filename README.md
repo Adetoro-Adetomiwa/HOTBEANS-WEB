@@ -190,8 +190,7 @@ Home
 ├── Trainee Profiles
 │   ├── Profile 1
 │   ├── Profile 2
-│   ├── Profile 3
-│   └── Profile 4
+│   └── Profile 3
 ├── Job Opportunities
 │   ├── Junior Frontend Developer
 │   ├── Full Stack Developer

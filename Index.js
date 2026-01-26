@@ -1247,3 +1247,37 @@ function initCourseSearch() {
         courseCountEl.textContent = visibleCount;
     });
 }
+
+// ============================================
+// MOBILE MENU TOGGLE
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            const isActive = navLinks.classList.contains('active');
+            navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', !isActive);
+        });
+        
+        // Close menu when clicking on a link
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav-container')) {
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});

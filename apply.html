@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0, user-scalable=yes">
+    <meta name="description" content="Apply to join HotBeans Web. Submit your application for web development trainee positions.">
+    <title>Apply | HotBeans Web</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <img src="assets/logo1.svg" alt="HotBeans Web" class="nav-logo">
+            <ul class="nav-links">
+                <li><a href="Index.html">Company</a></li>
+                <li><a href="trainees.html">Trainees</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html" class="nav-current">Apply</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+    <section class="hero">
+        <div class="hero-content hero-content--centered">
+            <h1>Apply</h1>
+            <p class="hero-subtitle">Submit your application to join HotBeans Web.</p>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container apply-container">
+            <div class="content-block">
+                <p>Thank you for your interest in joining HotBeans Web. Complete the form below with your details and CV. We will review your application and get in touch if you are selected for the next stage.</p>
+            </div>
+            <form id="application-form" class="application-form">
+                <div id="job-title-display" class="form-group" style="display: none;">
+                    <label>Applying for <span id="job-title-text" class="form-control-static"></span></label>
+                </div>
+                <div class="form-group">
+                    <label for="fullname">Full name *</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="portfolio">Portfolio link *</label>
+                    <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="cv">Upload CV *</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                </div>
+                <div class="form-group">
+                    <label for="why-hotbeans">Why HotBeans Web? *</label>
+                    <textarea id="why-hotbeans" name="why-hotbeans" rows="6" placeholder="Tell us why you want to join HotBeans Web..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cover-letter">Cover letter</label>
+                    <input type="file" id="cover-letter" name="cover-letter" accept=".pdf,.doc,.docx">
+                    <p class="form-helper-text">You can upload your cover letter as an additional document.</p>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I confirm that the information provided is accurate and complete. *</label>
+                </div>
+                <button type="submit" class="btn-primary">Submit application</button>
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="Index.html#about">About</a></li>
+                <li><a href="Index.html#vision">Vision</a></li>
+                <li><a href="Index.html#mission">Mission</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Careers</h4>
+            <ul>
+                <li><a href="trainees.html">Trainees</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Learning</h4>
+            <ul>
+                <li><a href="courses.html#all-courses">Web Development Courses</a></li>
+                <li><a href="courses.html#resources">Learning Resources</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Legal &amp; Accessibility</h4>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="accessibility.html">Accessibility Statement</a></li>
+                <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 HotBeans Web. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="Index.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Job titles mapping
+    const jobTitles = {
+        'junior-front-end': 'Junior Front-End Developer',
+        'front-end': 'Front-End Developer',
+        'back-end': 'Back-End Developer',
+        'senior-back-end': 'Senior Back-End Developer',
+        'full-stack': 'Full-Stack Developer'
+    };
+    
+    const params = new URLSearchParams(window.location.search);
+    const jobKey = params.get('job');
+    
+    if (jobKey && jobTitles[jobKey]) {
+        const jobTitleDisplay = document.getElementById('job-title-display');
+        const jobTitleText = document.getElementById('job-title-text');
+        jobTitleText.textContent = jobTitles[jobKey];
+        jobTitleDisplay.style.display = 'block';
+    }
+});
+</script>
+</body>
+</html>

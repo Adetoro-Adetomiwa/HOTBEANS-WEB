@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0, user-scalable=yes">
+    <meta name="description" content="Recommended web development courses from freeCodeCamp and learning resources for HotBeans Web.">
+    <title>Courses | HotBeans Web</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <img src="assets/logo1.svg" alt="HotBeans Web" class="nav-logo">
+            <ul class="nav-links">
+                <li><a href="Index.html">Company</a></li>
+                <li><a href="trainees.html">Trainees</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="courses.html" class="nav-current">Courses</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+    <section class="hero">
+        <div class="hero-content hero-content--centered">
+            <h1>Courses</h1>
+            <p class="hero-subtitle">Build the skills required for HotBeans Web roles using trusted online learning platforms and structured training resources.</p>
+        </div>
+    </section>
+
+    <!-- ALL COURSES -->
+    <section id="all-courses" class="section section-alt">
+        <div class="container">
+            <h2>Web Development Courses</h2>
+            <p class="section-intro">Choose courses tailored to your career path. Each course is designed to develop specific skills needed for HotBeans Web positions.</p>
+            
+            <!-- Course Search Controls -->
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="course-search" class="filter-label">Search courses:</label>
+                    <input 
+                        type="text" 
+                        id="course-search" 
+                        class="filter-input" 
+                        placeholder="Enter course name or keyword..."
+                        aria-label="Search for courses"
+                    />
+                </div>
+                <div class="filter-stats" id="course-filter-stats">
+                    Showing <strong id="course-count">0</strong> of <strong id="total-courses">0</strong> courses
+                </div>
+            </div>
+
+            <div class="courses-grid">
+                <article class="course-card" data-course-id="responsive-web-design">
+                    <div class="course-header">
+                        <h3>Responsive Web Design</h3>
+                    </div>
+                    <p class="course-desc">Master HTML, CSS, and responsive design principles through hands-on projects. Build pixel-perfect layouts that work across all devices.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="javascript-algorithms">
+                    <div class="course-header">
+                        <h3>JavaScript Algorithms and Data Structures</h3>
+                    </div>
+                    <p class="course-desc">Learn modern JavaScript from basics to advanced concepts. Master ES6+, async programming, and problem-solving algorithms.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="front-end-dev-libs">
+                    <div class="course-header">
+                        <h3>Front-End Development Libraries</h3>
+                    </div>
+                    <p class="course-desc">Master React and modern front-end frameworks. Build interactive single-page applications with components and state management.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="advanced-css">
+                    <div class="course-header">
+                        <h3>Advanced CSS for Modern Web</h3>
+                    </div>
+                    <p class="course-desc">Master advanced CSS for professional websites. Learn animations, performance optimization, and WCAG accessibility compliance.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="web-accessibility">
+                    <div class="course-header">
+                        <h3>Web Accessibility Essentials</h3>
+                    </div>
+                    <p class="course-desc">Build inclusive web applications. Learn semantic HTML, ARIA, and keyboard navigation to ensure your sites work for everyone.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="backend-dev-apis">
+                    <div class="course-header">
+                        <h3>Back-End Development & APIs</h3>
+                    </div>
+                    <p class="course-desc">Build robust server-side applications with Node.js and Express. Master REST API design, authentication, and database integration.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="relational-db">
+                    <div class="course-header">
+                        <h3>Relational Databases (SQL & PostgreSQL)</h3>
+                    </div>
+                    <p class="course-desc">Master SQL and database design with PostgreSQL. Learn schema design, query optimization, and effective data management.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="python-for-beginners">
+                    <div class="course-header">
+                        <h3>Python for Beginners</h3>
+                    </div>
+                    <p class="course-desc">Learn Python programming from scratch. Master syntax, data structures, and problem-solving for backend development.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="django-for-beginners">
+                    <div class="course-header">
+                        <h3>Django for Beginners</h3>
+                    </div>
+                    <p class="course-desc">Build complete web applications with Django. Master the MTV pattern, ORM, authentication, and deployment.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="php-for-beginners">
+                    <div class="course-header">
+                        <h3>PHP for Beginners</h3>
+                    </div>
+                    <p class="course-desc">Learn PHP server-side programming fundamentals. Master form handling, sessions, and database integration.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="laravel-framework">
+                    <div class="course-header">
+                        <h3>Laravel Framework Mastery</h3>
+                    </div>
+                    <p class="course-desc">Master Laravel, the elegant PHP framework. Build modern web applications using MVC architecture and Eloquent ORM.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="web-security">
+                    <div class="course-header">
+                        <h3>Web Security Fundamentals</h3>
+                    </div>
+                    <p class="course-desc">Learn critical web security concepts and best practices. Master OWASP Top 10, authentication, encryption, and secure coding.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="typescript">
+                    <div class="course-header">
+                        <h3>TypeScript for JavaScript Developers</h3>
+                    </div>
+                    <p class="course-desc">Master TypeScript for type-safe development. Build robust applications using static typing and advanced JavaScript features.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="git-github">
+                    <div class="course-header">
+                        <h3>Git & GitHub Mastery</h3>
+                    </div>
+                    <p class="course-desc">Learn version control with Git and GitHub. Master branching, merging, and collaborative workflows for teams.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="testing-frameworks">
+                    <div class="course-header">
+                        <h3>JavaScript Testing (Jest & Cypress)</h3>
+                    </div>
+                    <p class="course-desc">Master modern testing frameworks. Learn unit testing, integration testing, and end-to-end testing for quality applications.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+
+                <article class="course-card" data-course-id="data-visualization">
+                    <div class="course-header">
+                        <h3>Data Visualization with D3.js</h3>
+                    </div>
+                    <p class="course-desc">Create professional interactive data visualizations with D3.js. Transform complex datasets into compelling visual stories.</p>
+                    <button class="btn-primary course-view-btn">View Details</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNING RESOURCES -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2>Additional Learning Resources</h2>
+            <p class="section-intro">Supplement your freeCodeCamp courses with these official documentation and reference materials.</p>
+            
+            <div class="resources-grid">
+                <article class="resource-card">
+                    <h3>MDN Web Docs</h3>
+                    <p>Comprehensive documentation for HTML, CSS, JavaScript, and web APIs from Mozilla.</p>
+                    <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Visit MDN</a>
+                </article>
+
+                <article class="resource-card">
+                    <h3>freeCodeCamp Blog</h3>
+                    <p>In-depth articles covering web development topics, best practices, and tutorials.</p>
+                    <a href="https://www.freecodecamp.org/news/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Read Articles</a>
+                </article>
+
+                <article class="resource-card">
+                    <h3>React Documentation</h3>
+                    <p>Official React documentation with guides, API reference, and best practices.</p>
+                    <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="btn-secondary">React Docs</a>
+                </article>
+
+                <article class="resource-card">
+                    <h3>Node.js Documentation</h3>
+                    <p>Complete Node.js API documentation and guides for backend development.</p>
+                    <a href="https://nodejs.org/docs/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Node.js Docs</a>
+                </article>
+
+                <article class="resource-card">
+                    <h3>Python Documentation</h3>
+                    <p>Complete Python language reference, tutorials, and library documentation.</p>
+                    <a href="https://docs.python.org/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Python Docs</a>
+                </article>
+
+                <article class="resource-card">
+                    <h3>PHP Documentation</h3>
+                    <p>Official PHP manual with function references and programming guides.</p>
+                    <a href="https://www.php.net/manual/" target="_blank" rel="noopener noreferrer" class="btn-secondary">PHP Docs</a>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="Index.html#about">About</a></li>
+                <li><a href="Index.html#values">Values</a></li>
+                <li><a href="Index.html#mission">Mission</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Careers</h4>
+            <ul>
+                <li><a href="trainees.html">Trainees</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="apply.html">Apply</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Learning</h4>
+            <ul>
+                <li><a href="courses.html#all-courses">Web Development Courses</a></li>
+                <li><a href="courses.html#resources">Learning Resources</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Legal & Accessibility</h4>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="accessibility.html">Accessibility Statement</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 HotBeans Web. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="Index.js"></script>
+</body>
+</html>

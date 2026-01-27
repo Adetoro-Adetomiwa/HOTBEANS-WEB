@@ -1,113 +1,46 @@
-# Hot Beans Web - Recruitment Website
+# Hot Beans Web
 
-## 📋 Project Overview
+Recruitment website for web developers. Check out job openings, see what the team is about, and apply if you're interested.
 
-**Project Name:** Hot Beans Web Recruitment Portal  
-**Purpose:** Create a professional web development recruitment website for prospective web developers  
-**Client:** Hot Beans Web (Web Development Agency)  
-**Target Audience:** Web development professionals, bootcamp graduates, and career changers
+## What's in here
 
----
+- **Jobs** - Open positions we're hiring for
+- **Trainees** - Profiles of people on the team (their stories and stuff)
+- **Apply** - Application form to apply for positions
+- **Mobile friendly** - Works on your phone and computer
+- **Accessible** - Built with accessibility in mind
 
-## 🎯 Brief Summary
+## Built with
 
-Hot Beans Web required a dedicated recruitment section to attract talented web developers. The website showcases:
+- HTML5
+- CSS3 (Flexbox, Grid, animations)
+- JavaScript (form validation, navigation)
 
-- **Company Profile** - Mission, values, and benefits
-- **Trainee Profiles** - Success stories of current team members
-- **Job Specifications** - Open positions with detailed requirements
-- **Application Form** - Simple, professional application process
-- **Course Links** - Recommended learning resources for skill development
+## How to use it
 
----
+Just clone it and open `index.html` in your browser. No complicated setup needed.
 
-## 🎨 Design Decisions & Justification
+Files breakdown:
+- `index.html` - Home page
+- `jobs.html` - Job listings
+- `trainees.html` - Meet the team
+- `apply.html` - Application form
+- `contact.html`, `courses.html`, `privacy.html`, `terms.html` - Other pages
+- `Index.css` - All the styling
+- `Index.js` - Makes things interactive
 
-### Color Palette
-**Selected:** Professional Slate Blue Theme (3 shades)
-- **Primary Dark:** `#1A252F` (Main background)
-- **Primary Mid:** `#2C3E50` (Secondary background)
-- **Primary Light:** `#34495E` (Borders, accents)
-- **Accent Color:** `#3498DB` (Interactive elements)
+## Putting it online
 
-**Justification:**
-- Professional, corporate appearance suitable for B2B recruitment
-- Avoids bright, clichéd colors (bright blues, greens) common in tech sites
-- Slate blue conveys trust, stability, and professionalism
-- Monochromatic with minimal contrast prevents eye strain
-- Accent blue (#3498DB) provides necessary visual hierarchy without overwhelming
+Free options to host this:
+- **GitHub Pages** - Push to GitHub and it's live
+- **Netlify** - Connect your repo, auto-deploys
+- **Vercel** - Similar to Netlify, really easy
 
-### Typography
-- **Font Family:** Segoe UI, Tahoma, Geneva, Verdana (system fonts)
-- **Rationale:** Fast-loading, readable across all devices, professional appearance
+## Questions?
 
-### Layout & Navigation
-**Information Architecture (IA):**
-1. **Global Navigation** - Sticky navbar with all major sections
-2. **Secondary Navigation** - Section-specific content within cards
-3. **Footer Navigation** - Quick links, legal pages, contact info
+Check the contact page on the site.
 
-**Responsive Design:**
-- Mobile-first approach with breakpoints at 768px and 480px
-- Hamburger menu for mobile devices
-- Flexible grid layouts that adapt to screen size
-
----
-
-## 📁 Project Structure
-
-```
-LEARNING PHASE/
-├── Index.html          # Main HTML structure
-├── Index.css           # Comprehensive styling
-├── Index.js            # Interactive functionality
-├── README.md           # Project documentation
-└── [Additional assets] # Future course logos, images, etc.
-```
-
----
-
-## 🔧 Technical Implementation
-
-### HTML Features
-- Semantic HTML5 structure (`<section>`, `<article>`, `<nav>`)
-- Accessibility attributes (alt text, proper heading hierarchy)
-- Form validation via HTML5 attributes
-- Meta tags for responsive design and SEO
-
-### CSS Features
-- **CSS Variables** - Easy color and spacing management
-- **Flexbox & Grid** - Modern layout system
-- **Media Queries** - Responsive breakpoints
-- **CSS Animations** - Subtle hover effects and transitions
-- **Backdrop Filters** - Modern glass-morphism effects
-- **Gradients** - Professional linear gradients for depth
-
-### JavaScript Features
-- **Form Validation** - Email, URL, phone number validation
-- **Navigation** - Smooth scrolling, active section highlighting
-- **Mobile Menu** - Hamburger menu toggle
-- **Interactive Elements** - Hover effects, animations
-- **Event Listeners** - Click handlers, form submissions
-- **Error Handling** - User-friendly validation messages
-
----
-
-## 📊 User Requirements Mapping
-
-| Requirement | Implementation | Status |
-|-------------|----------------|--------|
-| Company Profile | Section with About, Mission, Values, Benefits | ✓ Complete |
-| Trainee Profiles | 4 trainee cards with roles and skills | ✓ Complete |
-| Job Specifications | 3 job postings with full details | ✓ Complete |
-| Application Form | 10-field form with validation | ✓ Complete |
-| Course Links | 6 curated professional courses with external links | ✓ Complete |
-| Professional Design | Slate blue palette, professional layout | ✓ Complete |
-| Responsive Design | Mobile-first, tested at 480px, 768px, 1200px+ | ✓ Complete |
-
----
-
-## 🔄 Changes Made During Development
+## Changes Made During Development
 
 ### Initial Concept → Final Implementation
 
@@ -122,7 +55,7 @@ LEARNING PHASE/
 
 ---
 
-## ✨ Improvements Implemented
+## Improvements Implemented
 
 ### UX/UI Improvements
 1. **Smooth Scrolling** - All navigation links use smooth scroll behavior
@@ -146,7 +79,7 @@ LEARNING PHASE/
 
 ---
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - **Desktop:** 1200px+ (full layout)
 - **Tablet:** 768px - 1199px (optimized grid)
@@ -155,7 +88,7 @@ LEARNING PHASE/
 
 ---
 
-## 🌐 External Resources
+## External Resources
 
 ### Recommended Web Development Courses
 All courses link to Udemy's professional web development track:
@@ -171,7 +104,7 @@ All courses link to Udemy's professional web development track:
 
 ---
 
-## 🧪 Testing Information
+## Testing Information
 
 ### Browser Compatibility
 - Chrome/Edge (latest)
@@ -193,7 +126,7 @@ All courses link to Udemy's professional web development track:
 
 ---
 
-## 📝 Form Features
+## Form Features
 
 ### Application Form Fields
 1. Full Name (required)
@@ -217,7 +150,7 @@ All courses link to Udemy's professional web development track:
 
 ---
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 1. **Backend Integration** - Connect form to email service or database
 2. **Application Dashboard** - Track application status
@@ -230,7 +163,7 @@ All courses link to Udemy's professional web development track:
 
 ---
 
-## 📧 Contact & Support
+## Contact & Support
 
 **Company Email:** careers@hotbeansweb.com  
 **Phone:** +44 (0) 123 456 7890  
@@ -238,7 +171,7 @@ All courses link to Udemy's professional web development track:
 
 ---
 
-## 📄 Additional Documentation
+## Additional Documentation
 
 ### Design Decisions Document
 - Layout: Grid-based, mobile-first responsive design
@@ -257,8 +190,7 @@ Home
 ├── Trainee Profiles
 │   ├── Profile 1
 │   ├── Profile 2
-│   ├── Profile 3
-│   └── Profile 4
+│   └── Profile 3
 ├── Job Opportunities
 │   ├── Junior Frontend Developer
 │   ├── Full Stack Developer
@@ -281,7 +213,7 @@ Home
 
 ---
 
-## ✅ Completion Checklist
+## Completion Checklist
 
 - [x] Professional design with 3-color palette
 - [x] Semantic HTML structure
@@ -298,7 +230,7 @@ Home
 
 ---
 
-## 📚 Code Quality Standards
+## Code Quality Standards
 
 - **HTML:** Valid HTML5, semantic markup
 - **CSS:** DRY principles, organized sections, variables
@@ -308,8 +240,8 @@ Home
 
 ---
 
-**Project Status:** ✓ COMPLETE  
-**Last Updated:** January 2024  
+**Project Status:** COMPLETE  
+**Last Updated:** January 2026 
 **Version:** 1.0
 
 ---

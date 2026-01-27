@@ -7,13 +7,13 @@
     --c-base: #1a1a1a;
     --c-mid: #4a4a4a;
     --c-soft: #e8e8e8;
-    --bg-main: #ffffff;
-    --bg-alt: #f5f5f5;
-    --bg-mission: #f0f0f0;
+    --bg-main: #e8e8e8;
+    --bg-alt: #f0f0f0;
+    --bg-mission: #e0e0e0;
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
     --surface: #ffffff;
-    --surface-strong: #f5f5f5;
+    --surface-strong: #f7f7f7;
     --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
     --accent: #4a4a4a;
     --nav-bg: #1a1a1a;
@@ -190,146 +190,10 @@ p {
     padding: 0.5rem;
     border-radius: var(--radius);
     transition: background-color 0.3s ease;
-    min-height: 44px;
-    min-width: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .theme-toggle:hover {
     background: rgba(255,255,255,0.1);
-}
-
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    gap: 6px;
-    min-width: 44px;
-    min-height: 44px;
-    justify-content: center;
-}
-
-.hamburger span {
-    width: 24px;
-    height: 3px;
-    background: var(--nav-text);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-    
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: var(--nav-bg);
-        flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        border-bottom: 1px solid var(--border);
-    }
-    
-    .nav-links.active {
-        max-height: 500px;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .nav-links a {
-        display: block;
-        padding: 1rem 1.5rem;
-        font-size: 0.95rem;
-    }
-    
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .nav-logo { 
-        height: 32px;
-        margin-right: auto;
-    }
-    
-    /* Hero Section */
-    .hero-logo { max-width: 220px; }
-    .hero-logo-large { max-width: 200px; }
-    .hero-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-text { text-align: center; }
-    .hero-text h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-    
-    /* Sub-navigation & Tabs */
-    .subnav-links { gap: 1.25rem; }
-    .subnav-links a { padding: 0.75rem 0; }
-    .nav-tabs { gap: 0.75rem; flex-wrap: wrap; }
-    .tab-btn { padding: 0.6rem 1rem; font-size: 0.95rem; }
-    
-    /* Forms */
-    .form-row { grid-template-columns: 1fr; }
-    
-    /* Grids */
-    .contact-grid { grid-template-columns: 1fr; }
-    .jobs-grid { grid-template-columns: 1fr; }
-    .courses-grid { grid-template-columns: 1fr; }
-    .trainee-profiles { grid-template-columns: 1fr; }
-    
-    /* Cards */
-    .job-card-actions { flex-wrap: wrap; }
-    .job-card-actions .btn-primary,
-    .job-card-actions .btn-secondary { 
-        min-width: 100%; 
-        justify-content: center;
-    }
-    .course-card { min-height: auto; }
-    
-    /* Buttons - Touch-friendly sizing */
-    .btn-primary,
-    .btn-secondary { 
-        min-height: 44px;
-        font-size: 1rem;
-    }
-    
-    /* Overlays */
-    .course-overlay-panel,
-    .job-modal-content-wrapper { 
-        max-width: 95vw; 
-        margin: 1rem;
-    }
-    
-    /* Misc */
-    .position-header { flex-direction: column; align-items: flex-start; }
-    .footer-content { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================================
@@ -682,37 +546,23 @@ p {
 
 .btn-primary {
     display: inline-block;
-    padding: 0.85rem 1.75rem;
-    background: #4a4a4a;
-    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-alt);
+    color: var(--text-primary);
     text-decoration: none;
     border-radius: var(--radius);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .btn-primary:hover {
-    background: #2a2a2a;
-    color: #ffffff;
+    background: var(--c-mid);
+    color: var(--surface);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-body.dark .btn-primary {
-    background: #e8e8e8;
-    color: #1a1a1a;
-}
-
-body.dark .btn-primary:hover {
-    background: #ffffff;
-    color: #1a1a1a;
 }
 
 /* ============================================
@@ -1530,15 +1380,13 @@ body.modal-open {
     border-bottom: 1px solid var(--border);
     margin-top: 0.5rem;
     text-align: center;
-    padding-right: 3.5rem;
 }
 
 .course-overlay-header h2 {
     font-size: clamp(1.6rem, 4vw, 1.9rem);
     margin-bottom: 0;
     color: var(--text-primary);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    padding-right: 0;
 }
 
 .course-overlay-summary {
@@ -1729,15 +1577,13 @@ body.modal-open {
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
     margin-top: 0.5rem;
-    padding-right: 3.5rem;
 }
 
 .job-overlay-header h2 {
     font-size: clamp(1.6rem, 4vw, 1.9rem);
     margin-bottom: 1rem;
     color: var(--text-primary);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    padding-right: 3rem;
 }
 
 .job-overlay-meta {
@@ -2507,141 +2353,185 @@ body.dark .contact-icon {
 }
 
 @media (max-width: 480px) {
-    /* Navigation */
-    .navbar { 
-        padding: 0.8rem 1rem; 
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-    .nav-logo { 
-        height: 28px;
-        margin-right: auto;
-    }
-    .theme-toggle { 
-        font-size: 1rem;
-        min-width: 44px;
-        min-height: 44px;
+    /* Compact navbar */
+    .navbar { padding: 0.6rem 1rem; }
+    .nav-links { 
+        font-size: 0.85rem; 
+        gap: 0.65rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
-    /* Sections */
-    .section { padding: 1.5rem 1rem; }
-    .mission-inner { padding: 1.5rem 1rem; }
+    /* Generous padding for touch */
+    .section { padding: 2rem 1rem; }
+    .mission-inner { padding: 2rem 1rem; }
     .container { padding: 0 1rem; }
     
     /* Footer single column */
     .footer-content { grid-template-columns: 1fr; }
     
-    /* Headings scale appropriately */
-    h1 { font-size: clamp(1.5rem, 5vw, 2rem); }
-    h2 { font-size: clamp(1.2rem, 4vw, 1.6rem); }
-    h3 { font-size: 1.1rem; }
+    /* Headings scale down */
+    h1 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
+    h2 { font-size: clamp(1.4rem, 4vw, 1.8rem); }
+    h3 { font-size: 1.15rem; }
     
     /* Hero adjustments */
-    .hero-logo-large { max-width: 200px; }
-    .hero-subtitle { font-size: 0.95rem; line-height: 1.6; }
-    .hero-text h1 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+    .hero-subtitle { font-size: 1rem; line-height: 1.6; }
     
-    /* Cards - full width and stacked */
-    .trainee-profiles { grid-template-columns: 1fr; }
-    .trainee-card { min-height: auto; padding: 1.5rem; }
-    .trainee-photo { width: 140px; height: 140px; }
-    
-    .jobs-grid { grid-template-columns: 1fr; }
-    .job-card { padding: 1.5rem; }
-    
-    .courses-grid { grid-template-columns: 1fr; }
-    .course-card { padding: 1.5rem; }
-    
-    .contact-grid { grid-template-columns: 1fr; }
-    .contact-card { padding: 1.5rem; }
-    
-    /* Touch-friendly buttons */
-    .btn-primary,
-    .btn-secondary { 
-        min-height: 48px;
-        font-size: 0.95rem;
-        padding: 0.75rem 1.25rem;
-        width: 100%;
-    }
-    
-    /* Forms */
-    .form-row { grid-template-columns: 1fr; }
-    .form-group { margin-bottom: 1rem; margin-left: 0; margin-right: 0; }
-    .application-form { padding: 1.5rem; }
-    
-    /* Filter controls stack */
-    .filter-controls { 
-        padding: 0.75rem;
-        gap: 0.75rem;
-        flex-direction: column;
-    }
-    .filter-group {
-        flex-direction: column;
-        min-width: 100%;
-    }
-    .filter-label { font-size: 0.9rem; }
+    /* Filter controls stack vertically */
+    .filter-controls { padding: 1rem; }
+    .filter-label { font-size: 0.95rem; }
     .filter-select,
-    .filter-input { 
-        font-size: 0.95rem;
-        max-width: 100%;
+    .filter-input { font-size: 0.95rem; }
+    
+    /* Hamburger menu for mobile */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        margin-left: auto;
     }
     
-    /* Overlays - more padding */
-    .course-overlay-panel,
-    .job-overlay-panel { 
-        max-width: 100%;
-        margin: 0;
-        padding: 1.5rem;
-        max-height: 90vh;
+    .hamburger-menu span {
+        display: block;
+        width: 24px;
+        height: 2.5px;
+        background: var(--nav-text);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Mobile nav menu */
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--nav-bg);
+        flex-direction: column;
+        gap: 0 !important;
+        display: none !important;
+        padding: 1rem 0 !important;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+        z-index: 99;
+    }
+    
+    .nav-links.active {
+        display: flex !important;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem;
+        border-bottom: none !important;
+        border-left: 3px solid transparent;
+    }
+    
+    .nav-links a.nav-current {
+        border-left: 3px solid var(--nav-text-active) !important;
+        background: rgba(255,255,255,0.05);
+    }
+    
+    .nav-container {
+        gap: 0;
+        justify-content: space-between;
+    }
+    
+    .nav-logo {
+        margin-right: 0;
+        height: 32px;
+    }
+    
+    .theme-toggle {
+        order: -1;
+        margin-right: 0.5rem;
+    }
+    
+    /* Mobile overlay adjustments - heading not obscured by close button */
+    .course-overlay-header,
+    .job-overlay-header {
+        padding-right: 3.5rem;
+        text-align: left;
+    }
+    
+    .course-overlay-header h2,
+    .job-overlay-header h2 {
+        text-align: left;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
     
     .course-overlay-close,
     .job-overlay-close {
+        top: 1rem;
+        right: 1rem;
         width: 36px;
         height: 36px;
         font-size: 1.5rem;
     }
     
-    /* Text sizing */
-    p { font-size: 0.95rem; }
-    
-    /* Trainee journey sections */
-    .journey-shell { padding: 1.5rem; }
-    .journey-close { width: 36px; height: 36px; font-size: 1.5rem; }
-    
-    /* Misc */
-    .position-header { flex-direction: column; }
-}
-
-/* Extra small devices (< 375px) */
-@media (max-width: 375px) {
-    .navbar { padding: 0.6rem 0.75rem; }
-    .nav-logo { height: 24px; }
-    .hamburger span { width: 20px; height: 2.5px; }
-    
-    h1 { font-size: 1.3rem; }
-    h2 { font-size: 1.1rem; }
-    h3 { font-size: 1rem; }
-    
-    .hero-logo-large { max-width: 160px; }
-    .hero-subtitle { font-size: 0.9rem; }
-    
-    .btn-primary,
-    .btn-secondary { 
-        font-size: 0.9rem;
-        padding: 0.65rem 1rem;
-        min-height: 44px;
+    /* Improved mobile form inputs */
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+        font-size: 16px !important;
     }
     
-    .section { padding: 1rem 0.75rem; }
-    .container { padding: 0 0.75rem; }
+    /* Touch-friendly spacing for cards */
+    .trainee-card,
+    .job-card,
+    .course-card {
+        padding: 1.5rem;
+    }
     
-    .trainee-photo { width: 120px; height: 120px; }
-    .trainee-card { padding: 1.25rem; }
+    /* Ensure buttons are touch-friendly */
+    button {
+        min-height: 48px;
+    }
     
-    .job-card { padding: 1.25rem; }
-    .course-card { padding: 1.25rem; }
+    /* Improved image scaling on mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Extra small devices - improve readability */
+@media (max-width: 375px) {
+    .hero-text h1 { font-size: 1.5rem; }
+    .nav-links { font-size: 0.8rem; gap: 0.5rem; }
+    .btn-primary,
+    .btn-secondary { font-size: 0.9rem; padding: 0.75rem 1.25rem; }
+    .filter-controls { gap: 1rem; }
 }
 
 /* ============================================

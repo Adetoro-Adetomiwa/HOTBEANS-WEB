@@ -4,40 +4,40 @@
    ============================================ */
 
 :root {
-    --c-base: #1a1a1a;
-    --c-mid: #4a4a4a;
-    --c-soft: #e8e8e8;
-    --bg-main: #e8e8e8;
-    --bg-alt: #f0f0f0;
-    --bg-mission: #e0e0e0;
+    --c-base: #333333;
+    --c-mid: #666666;
+    --c-soft: #ffffff;
+    --bg-main: #ffffff;
+    --bg-alt: #f5f5f5;
+    --bg-mission: #f9f9f9;
     --text-primary: #1a1a1a;
-    --text-secondary: #4a4a4a;
+    --text-secondary: #555555;
     --surface: #ffffff;
-    --surface-strong: #f7f7f7;
+    --surface-strong: #f5f5f5;
     --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-    --accent: #4a4a4a;
+    --accent: #555555;
     --nav-bg: #1a1a1a;
     --nav-text: rgba(255,255,255,0.75);
     --nav-text-active: rgba(255,255,255,1);
     --footer-bg: #1a1a1a;
     --footer-text: rgba(255,255,255,0.7);
-    --border: rgba(0,0,0,0.06);
+    --border: rgba(0,0,0,0.08);
     --radius: 4px;
 }
 
 body.dark {
-    --c-base: #e8e8e8;
-    --c-mid: #b0b0b0;
-    --c-soft: #2a2a2a;
-    --bg-main: #2a2a2a;
-    --bg-alt: #333333;
-    --bg-mission: #3a3a3a;
-    --text-primary: #e8e8e8;
-    --text-secondary: #b0b0b0;
-    --surface: #1f1f1f;
+    --c-base: #ffffff;
+    --c-mid: #cccccc;
+    --c-soft: #1a1a1a;
+    --bg-main: #000000;
+    --bg-alt: #1a1a1a;
+    --bg-mission: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --surface: #1a1a1a;
     --surface-strong: #262626;
-    --shadow-soft: 0 10px 30px rgba(0,0,0,0.35);
-    --accent: #b0b0b0;
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.5);
+    --accent: #cccccc;
     --nav-bg: #1a1a1a;
     --nav-text: rgba(255,255,255,0.75);
     --nav-text-active: rgba(255,255,255,1);
@@ -396,7 +396,7 @@ p {
     visibility: hidden;
     transition: opacity 0.12s ease-out, visibility 0.12s ease-out;
     will-change: opacity;
-    padding: clamp(2rem, 5vw, 3rem) 1.5rem;
+    padding: 1.5rem 1.5rem;
 }
 
 .content-panel--active {
@@ -414,14 +414,15 @@ p {
 }
 
 .content-panel h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
 }
 
 .content-panel p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.8rem;
     color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 1.15rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .content-panel p:last-child {

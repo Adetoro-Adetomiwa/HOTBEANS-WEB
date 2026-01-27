@@ -7,9 +7,9 @@
     --c-base: #1a1a1a;
     --c-mid: #4a4a4a;
     --c-soft: #e8e8e8;
-    --bg-main: #e8e8e8;
-    --bg-alt: #f0f0f0;
-    --bg-mission: #e0e0e0;
+    --bg-main: #ffffff;
+    --bg-alt: #f5f5f5;
+    --bg-mission: #f0f0f0;
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
     --surface: #ffffff;
@@ -23,6 +23,8 @@
     --footer-text: rgba(255,255,255,0.7);
     --border: rgba(0,0,0,0.06);
     --radius: 4px;
+    --btn-bg: #1a1a1a;
+    --btn-text: #ffffff;
 }
 
 body.dark {
@@ -44,6 +46,8 @@ body.dark {
     --footer-bg: #1a1a1a;
     --footer-text: rgba(255,255,255,0.7);
     --border: rgba(255,255,255,0.1);
+    --btn-bg: #e8e8e8;
+    --btn-text: #1a1a1a;
 }
 
 * {
@@ -138,17 +142,18 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     height: 100%;
+    width: 100%;
 }
 
 .nav-logo {
     height: 40px;
     width: auto;
     flex-shrink: 0;
-    margin-right: 1rem;
+    margin-right: auto;
 }
 
 .nav-links {
@@ -621,9 +626,9 @@ p {
 
 .btn-primary {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--bg-alt);
-    color: var(--text-primary);
+    padding: 0.9rem 1.75rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
     text-decoration: none;
     border-radius: var(--radius);
     font-weight: 600;
@@ -631,11 +636,40 @@ p {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary:hover {
     background: var(--c-mid);
     color: var(--surface);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.9rem 1.75rem;
+    background: var(--surface);
+    color: var(--btn-bg);
+    border: 2px solid var(--btn-bg);
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background: var(--btn-bg);
+    color: var(--btn-text);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
@@ -1412,6 +1446,7 @@ body.modal-open {
     max-height: 85vh;
     overflow-y: auto;
     padding: clamp(1.5rem, 4vw, 2.5rem);
+    padding-top: 3.5rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     position: relative;
     opacity: 0;
@@ -1427,10 +1462,10 @@ body.modal-open {
 
 .course-overlay-close {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 40px;
-    height: 40px;
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
     border: 1px solid var(--border);
     background: var(--surface);
     border-radius: var(--radius);
@@ -1442,6 +1477,9 @@ body.modal-open {
     justify-content: center;
     transition: all 0.2s ease;
     padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+    z-index: 10;
 }
 
 .course-overlay-close:hover {
@@ -1453,7 +1491,7 @@ body.modal-open {
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
-    margin-top: 0.5rem;
+    margin-top: 0;
     text-align: center;
 }
 
@@ -1461,7 +1499,7 @@ body.modal-open {
     font-size: clamp(1.6rem, 4vw, 1.9rem);
     margin-bottom: 0;
     color: var(--text-primary);
-    padding-right: 0;
+    padding-right: 3rem;
 }
 
 .course-overlay-summary {
@@ -1610,6 +1648,7 @@ body.modal-open {
     max-height: 85vh;
     overflow-y: auto;
     padding: clamp(1.5rem, 4vw, 2.5rem);
+    padding-top: 3.5rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     position: relative;
     opacity: 0;
@@ -1625,10 +1664,10 @@ body.modal-open {
 
 .job-overlay-close {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 40px;
-    height: 40px;
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
     border: 1px solid var(--border);
     background: var(--surface);
     border-radius: var(--radius);
@@ -1640,6 +1679,9 @@ body.modal-open {
     justify-content: center;
     transition: all 0.2s ease;
     padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+    z-index: 10;
 }
 
 .job-overlay-close:hover {
@@ -1651,7 +1693,7 @@ body.modal-open {
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
-    margin-top: 0.5rem;
+    margin-top: 0;
 }
 
 .job-overlay-header h2 {
@@ -2430,84 +2472,99 @@ body.dark .contact-icon {
 @media (max-width: 480px) {
     /* Navigation */
     .navbar { 
-        padding: 0.8rem 1rem; 
+        padding: 0.75rem 1rem; 
         position: sticky;
         top: 0;
         z-index: 100;
-    }
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.5rem;
     }
     .nav-logo { 
         height: 32px;
         margin-right: auto;
     }
     
-    /* Compact navbar */
-    .section { padding: 1.5rem 1rem; }
-    .mission-inner { padding: 1.5rem 1rem; }
-    .container { padding: 0 1rem; }
-    
-    /* Footer single column */
-    .footer-content { grid-template-columns: 1fr; }
-    
-    /* Headings scale down */
+    /* Headings */
     h1 { font-size: clamp(1.5rem, 5vw, 2rem); }
     h2 { font-size: clamp(1.2rem, 4vw, 1.6rem); }
     h3 { font-size: 1.1rem; }
     
     /* Hero adjustments */
+    .hero { padding: 1.5rem 1rem; }
     .hero-logo-large { max-width: 240px; }
     .hero-subtitle { font-size: 0.95rem; line-height: 1.6; }
     .hero-text h1 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
     
-    /* Touch-friendly buttons */
+    /* Ensure buttons are full-width and touch-friendly */
     .btn-primary,
     .btn-secondary { 
         min-height: 44px;
         font-size: 0.95rem; 
-        padding: 0.75rem 1.25rem;
-        width: 100%;
+        padding: 0.9rem 1.5rem;
+        width: auto;
+        white-space: nowrap;
+    }
+    
+    /* Card containers */
+    .section { 
+        padding: 1.5rem 1rem; 
+        overflow: hidden;
+    }
+    .container { 
+        padding: 0 1rem;
+        max-width: 100%;
     }
     
     /* Cards stack vertically */
-    .trainee-profiles { grid-template-columns: 1fr; }
-    .jobs-grid { grid-template-columns: 1fr; }
-    .courses-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
+    .trainee-profiles { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+    .jobs-grid { 
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .courses-grid { 
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .contact-grid { 
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
     
     /* Forms */
-    .form-row { grid-template-columns: 1fr; }
-    .form-group { margin-bottom: 1rem; }
+    .form-row { 
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+    .form-group { 
+        margin-bottom: 1rem; 
+    }
     
-    /* Filter controls stack */
-    .filter-controls { 
-        padding: 0.75rem;
-        gap: 0.75rem;
-    }
-    .filter-group {
-        flex-direction: column;
-        min-width: 100%;
-    }
-    .filter-label { font-size: 0.9rem; }
-    .filter-select,
-    .filter-input { 
-        font-size: 0.95rem;
-        max-width: 100%;
+    /* Overlays */
+    .course-overlay-panel,
+    .job-overlay-panel { 
+        max-width: 95vw;
+        margin: 1rem auto;
+        max-height: 90vh;
     }
     
     /* Text adjustments */
     .hero-subtitle--large { font-size: 0.95rem; }
     p { font-size: 0.95rem; }
     
-    /* Overlays */
-    .course-overlay-panel,
-    .job-modal-content-wrapper { 
-        max-width: 95vw;
-        margin: 0.5rem;
+    /* Footer */
+    .footer-content { 
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Prevent horizontal scrolling */
+    body, html {
+        overflow-x: hidden;
+    }
+    
+    main, .section, .container {
+        overflow-x: hidden;
     }
 }
 
@@ -2515,7 +2572,7 @@ body.dark .contact-icon {
 @media (max-width: 375px) {
     .navbar { padding: 0.6rem 0.75rem; }
     .nav-logo { height: 28px; }
-    .theme-toggle { font-size: 1rem; }
+    .theme-toggle { font-size: 1rem; min-width: 40px; min-height: 40px; }
     
     h1 { font-size: 1.3rem; }
     h2 { font-size: 1.1rem; }
@@ -2526,11 +2583,16 @@ body.dark .contact-icon {
     .btn-primary,
     .btn-secondary { 
         font-size: 0.9rem;
-        padding: 0.65rem 1rem;
+        padding: 0.8rem 1.25rem;
+        min-height: 40px;
     }
     
     .section { padding: 1rem 0.75rem; }
     .container { padding: 0 0.75rem; }
+    
+    .trainee-profiles, .jobs-grid, .courses-grid, .contact-grid {
+        gap: 1rem;
+    }
 }
 
 /* ============================================

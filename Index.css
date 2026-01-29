@@ -7,6 +7,7 @@
     --brand-teal: #0F3D3E;
     --brand-teal-dark: #0B2E2F;
     --brand-teal-light: #1A5556;
+    --brand-teal-hero: #2A7078;
     
     /* Backgrounds */
     --bg-main: #F7F9F9;
@@ -25,7 +26,7 @@
     --surface: #FFFFFF;
     --surface-strong: #F7F9F9;
     --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-    --accent: #F2A65A;
+    --accent: #000000;
     --nav-bg: #1a1a1a;
     --nav-text: rgba(255,255,255,0.75);
     --nav-text-active: rgba(255,255,255,1);
@@ -168,7 +169,7 @@ p {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--brand-teal-dark);
+    background: var(--brand-teal);
     border-radius: var(--radius);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     list-style: none;
@@ -229,7 +230,7 @@ p {
    ============================================ */
 
 .hero {
-    background: var(--brand-teal-light);
+    background: var(--brand-teal-hero);
     padding: clamp(3rem, 8vw, 5rem) 1.5rem;
     border-bottom: 1px solid var(--brand-teal-dark);
     margin-top: 60px;

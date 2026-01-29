@@ -4,7 +4,7 @@
 
 /* Hero Section - Full Width Teal */
 .about-hero {
-    background: var(--brand-teal);
+    background: var(--brand-teal-hero);
     color: white;
     padding: clamp(5rem, 12vw, 8rem) 1.5rem;
     text-align: center;

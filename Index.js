@@ -571,30 +571,42 @@ const COURSE_DATA = {
 document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('loaded');
 
-    // Tab functionality for home page
+    // Handle dropdown clicks for About/Mission/Vision navigation
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            // Check if link has a hash (e.g., about.html#mission)
+            if (href && href.includes('#')) {
+                const [page, hash] = href.split('#');
+                // If we're on the about page or navigating to it
+                if (window.location.pathname.includes('about.html') || page.includes('about.html')) {
+                    e.preventDefault();
+                    // Switch to the correct tab
+                    switchToTab(hash);
+                    // If not on about page, navigate there
+                    if (!window.location.pathname.includes('about.html')) {
+                        window.location.href = href;
+                    }
+                }
+            }
+        });
+    });
+
+    // Handle hash on page load (when coming from dropdown link)
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1); // Remove the #
+        switchToTab(hash);
+    }
+
+    // Tab functionality for about page
     const tabButtons = document.querySelectorAll('.tab-btn');
     const contentPanels = document.querySelectorAll('.content-panel');
 
     tabButtons.forEach(button => {
         button.addEventListener('click', function () {
             const sectionId = this.getAttribute('data-section');
-
-            // Remove active class from all buttons and panels
-            tabButtons.forEach(btn => {
-                btn.classList.remove('tab-btn--active');
-                btn.setAttribute('aria-selected', 'false');
-            });
-            contentPanels.forEach(panel => {
-                panel.classList.remove('content-panel--active');
-            });
-
-            // Add active class to clicked button and corresponding panel
-            this.classList.add('tab-btn--active');
-            this.setAttribute('aria-selected', 'true');
-            const targetPanel = document.getElementById(sectionId);
-            if (targetPanel) {
-                targetPanel.classList.add('content-panel--active');
-            }
+            switchToTab(sectionId);
         });
     });
 
@@ -607,6 +619,35 @@ document.addEventListener('DOMContentLoaded', function () {
     initJobFilter();
     initCourseSearch();
 });
+
+// Function to switch tabs on about page
+function switchToTab(sectionId) {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const contentPanels = document.querySelectorAll('.content-panel');
+    
+    if (!tabButtons.length || !contentPanels.length) return;
+
+    // Remove active class from all buttons and panels
+    tabButtons.forEach(btn => {
+        btn.classList.remove('tab-btn--active');
+        btn.setAttribute('aria-selected', 'false');
+    });
+    contentPanels.forEach(panel => {
+        panel.classList.remove('content-panel--active');
+    });
+
+    // Add active class to clicked button and corresponding panel
+    const targetButton = document.querySelector(`.tab-btn[data-section="${sectionId}"]`);
+    if (targetButton) {
+        targetButton.classList.add('tab-btn--active');
+        targetButton.setAttribute('aria-selected', 'true');
+    }
+    
+    const targetPanel = document.getElementById(sectionId);
+    if (targetPanel) {
+        targetPanel.classList.add('content-panel--active');
+    }
+}
 
 
 // ============================================

@@ -165,11 +165,12 @@ p {
     list-style: none;
     padding: 0.5rem 0;
     margin: 0;
-    min-width: 160px;
+    width: max-content;
     z-index: 1000;
 }
 
 .nav-dropdown:hover .dropdown-menu,
+.dropdown-menu:hover,
 .nav-dropdown.dropdown-active .dropdown-menu {
     display: block;
 }
@@ -180,12 +181,13 @@ p {
 
 .dropdown-menu a {
     display: block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
     color: var(--nav-text);
     text-decoration: none;
     font-size: 1rem;
     border-bottom: none !important;
     transition: background-color 0.2s ease;
+    white-space: nowrap;
 }
 
 .dropdown-menu a:hover {

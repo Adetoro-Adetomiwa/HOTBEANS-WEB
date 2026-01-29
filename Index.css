@@ -440,21 +440,24 @@ p {
 
 /* About page cards */
 .about-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: clamp(2rem, 5vw, 3rem) 1.5rem;
+    min-height: 400px;
 }
 
 .about-card {
-    position: relative;
+    position: absolute;
     opacity: 0;
     visibility: hidden;
     background: var(--surface);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 2.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: opacity 0.12s ease-out, visibility 0.12s ease-out, box-shadow 0.3s ease;
+    max-width: 800px;
+    width: 100%;
 }
 
 .about-card.content-panel--active {

@@ -571,30 +571,6 @@ const COURSE_DATA = {
 document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('loaded');
 
-    // Theme toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('.theme-icon');
-
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark');
-        themeIcon.textContent = '☀️';
-    } else {
-        themeIcon.textContent = '🌙';
-    }
-    // Ensure contact page icons reflect current theme on load
-    updateContactIcons(document.body.classList.contains('dark'));
-
-    themeToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark');
-        const isDark = document.body.classList.contains('dark');
-        themeIcon.textContent = isDark ? '☀️' : '🌙';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        // Swap contact icons according to theme
-        updateContactIcons(isDark);
-    });
-
     // Tab functionality for home page
     const tabButtons = document.querySelectorAll('.tab-btn');
     const contentPanels = document.querySelectorAll('.content-panel');
@@ -631,20 +607,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initJobFilter();
     initCourseSearch();
 });
-
-// Swap contact page icons between light/dark variants when theme changes
-function updateContactIcons(isDark) {
-    const icons = document.querySelectorAll('.contact-icon-img');
-    if (!icons.length) return;
-    icons.forEach(img => {
-        const lightSrc = img.getAttribute('data-icon-light');
-        const darkSrc = img.getAttribute('data-icon-dark');
-        const targetSrc = isDark ? (darkSrc || lightSrc) : (lightSrc || img.getAttribute('src'));
-        if (targetSrc && img.getAttribute('src') !== targetSrc) {
-            img.setAttribute('src', targetSrc);
-        }
-    });
-}
 
 
 // ============================================

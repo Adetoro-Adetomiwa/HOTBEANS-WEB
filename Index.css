@@ -25,27 +25,6 @@
     --radius: 4px;
 }
 
-body.dark {
-    --c-base: #e8e8e8;
-    --c-mid: #b0b0b0;
-    --c-soft: #2a2a2a;
-    --bg-main: #2a2a2a;
-    --bg-alt: #333333;
-    --bg-mission: #3a3a3a;
-    --text-primary: #e8e8e8;
-    --text-secondary: #b0b0b0;
-    --surface: #1f1f1f;
-    --surface-strong: #262626;
-    --shadow-soft: 0 10px 30px rgba(0,0,0,0.35);
-    --accent: #b0b0b0;
-    --nav-bg: #1a1a1a;
-    --nav-text: rgba(255,255,255,0.75);
-    --nav-text-active: rgba(255,255,255,1);
-    --footer-bg: #1a1a1a;
-    --footer-text: rgba(255,255,255,0.7);
-    --border: rgba(255,255,255,0.1);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -165,6 +144,49 @@ p {
 
 .nav-links li {
     list-style: none;
+    position: relative;
+}
+
+/* Dropdown menu styles */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-secondary);
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 1rem;
+    border-bottom: none !important;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--bg-primary);
 }
 
 .nav-links a {
@@ -184,22 +206,7 @@ p {
 }
 
 .nav-highlight {
-    color: var(--nav-text) !important;
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--nav-text);
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: var(--radius);
-    transition: background-color 0.3s ease;
-}
-
-.theme-toggle:hover {
-    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.75) !important;
 }
 
 /* ============================================
@@ -1235,11 +1242,6 @@ p {
     letter-spacing: 0.05em;
 }
 
-body.dark .job-type {
-    background: rgba(255,255,255,0.12);
-    color: var(--text-primary);
-}
-
 .job-salary {
     font-size: 1.1rem;
     font-weight: 600;
@@ -1946,20 +1948,6 @@ body.modal-open {
     box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
 }
 
-body.dark .form-group input,
-body.dark .form-group select,
-body.dark .form-group textarea {
-    border-color: rgba(255,255,255,0.35);
-    background: var(--surface-strong);
-}
-
-body.dark .form-group input:focus,
-body.dark .form-group select:focus,
-body.dark .form-group textarea:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
-}
-
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -2114,10 +2102,6 @@ body.dark .form-group textarea:focus {
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
-body.dark .contact-card:hover {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
 .contact-icon {
     width: 60px;
     height: 60px;
@@ -2128,10 +2112,6 @@ body.dark .contact-card:hover {
     justify-content: center;
     font-size: 2rem;
     margin-bottom: 1rem;
-}
-
-body.dark .contact-icon {
-    background: var(--c-soft);
 }
 
 .contact-card h3 {

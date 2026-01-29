@@ -16,16 +16,20 @@
         <div class="nav-container">
             <img src="assets/logo1.svg" alt="HotBeans Web" class="nav-logo">
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="index.html">Home</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#about">About</a></li>
+                        <li><a href="about.html#mission">Mission</a></li>
+                        <li><a href="about.html#vision">Vision</a></li>
+                    </ul>
+                </li>
                 <li><a href="trainees.html" class="nav-current">Trainees</a></li>
                 <li><a href="jobs.html">Jobs</a></li>
                 <li><a href="apply.html">Apply</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <span class="theme-icon">🌙</span>
-            </button>
         </div>
     </nav>
 </header>

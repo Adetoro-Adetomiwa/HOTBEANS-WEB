@@ -155,10 +155,11 @@ p {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     left: 0;
-    background: #2a2a2a;
-    border-radius: 0 0 var(--radius) var(--radius);
+    background: rgba(42, 42, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     list-style: none;
     padding: 0.5rem 0;
@@ -187,7 +188,7 @@ p {
 }
 
 .dropdown-menu a:hover {
-    background: var(--bg-primary);
+    background: rgba(232, 232, 232, 0.15);
 }
 
 .nav-links a {

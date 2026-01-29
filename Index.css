@@ -150,7 +150,6 @@ p {
 /* Dropdown menu styles */
 .nav-dropdown {
     position: relative;
-    padding-bottom: 0.5rem;
 }
 
 .dropdown-menu {
@@ -445,6 +444,9 @@ p {
     align-items: center;
     padding: clamp(2rem, 5vw, 3rem) 1.5rem;
     min-height: 400px;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .about-card {
@@ -452,10 +454,11 @@ p {
     opacity: 0;
     visibility: hidden;
     background: var(--surface);
-    border-radius: 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     padding: 2.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: opacity 0.12s ease-out, visibility 0.12s ease-out, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-soft);
+    transition: opacity 0.12s ease-out, visibility 0.12s ease-out, transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 800px;
     width: 100%;
 }
@@ -466,19 +469,21 @@ p {
 }
 
 .about-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .about-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.65rem;
+    margin-bottom: 1.25rem;
     color: var(--text-primary);
+    font-weight: 700;
 }
 
 .about-card p {
     color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 1.05rem;
+    line-height: 1.75;
+    font-size: 1.1rem;
     margin: 0;
 }
 

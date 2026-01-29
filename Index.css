@@ -14,12 +14,12 @@
     --bg-white: #FFFFFF;
     
     /* Text */
-    --text-primary: #1E1E1E;
-    --text-secondary: #4A4A4A;
+    --text-primary: #000000;
+    --text-secondary: #000000;
     
     /* Legacy support */
-    --c-base: #1E1E1E;
-    --c-mid: #4A4A4A;
+    --c-base: #000000;
+    --c-mid: #000000;
     --c-soft: #E8F1F1;
     --bg-alt: #F7F9F9;
     --surface: #FFFFFF;
@@ -237,15 +237,15 @@ p {
 .hero-home {
     padding: clamp(4rem, 10vw, 6rem) 1.5rem;
     background: var(--brand-teal);
-    color: white;
+    color: black;
 }
 
 .hero-home .hero-content h1 {
-    color: white;
+    color: black;
 }
 
 .hero-home .hero-subtitle {
-    color: rgba(255, 255, 255, 0.95);
+    color: black;
 }
 
 .hero-content {

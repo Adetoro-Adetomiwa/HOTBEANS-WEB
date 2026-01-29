@@ -34,7 +34,7 @@
 .hero-divider {
     width: 80px;
     height: 3px;
-    background: var(--accent-amber);
+    background: var(--brand-teal);
     margin: 0 auto;
 }
 
@@ -106,7 +106,7 @@
 .accent-line {
     width: 4px;
     height: 50px;
-    background: var(--accent-amber);
+    background: var(--brand-teal-light);
     flex-shrink: 0;
 }
 

@@ -3,10 +3,10 @@
    ============================================ */
 
 :root {
-    /* Brand colors */
+    /* Brand colors - Teal only */
     --brand-teal: #0F3D3E;
     --brand-teal-dark: #0B2E2F;
-    --accent-amber: #F2A65A;
+    --brand-teal-light: #1A5556;
     
     /* Backgrounds */
     --bg-main: #F7F9F9;

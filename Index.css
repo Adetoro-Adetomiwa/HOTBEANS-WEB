@@ -14,12 +14,12 @@
     --bg-white: #FFFFFF;
     
     /* Text */
-    --text-primary: #000000;
-    --text-secondary: #000000;
+    --text-primary: #1E1E1E;
+    --text-secondary: #4A4A4A;
     
     /* Legacy support */
-    --c-base: #000000;
-    --c-mid: #000000;
+    --c-base: #1E1E1E;
+    --c-mid: #4A4A4A;
     --c-soft: #E8F1F1;
     --bg-alt: #F7F9F9;
     --surface: #FFFFFF;
@@ -237,15 +237,15 @@ p {
 .hero-home {
     padding: clamp(4rem, 10vw, 6rem) 1.5rem;
     background: var(--brand-teal);
-    color: black;
+    color: white;
 }
 
 .hero-home .hero-content h1 {
-    color: black;
+    color: white;
 }
 
 .hero-home .hero-subtitle {
-    color: black;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .hero-content {
@@ -1589,6 +1589,14 @@ body.modal-open {
     display: block;
     margin: 2rem auto 0;
     text-align: center;
+    background: var(--brand-teal) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.course-overlay-enroll:hover {
+    background: var(--brand-teal-dark) !important;
+    color: white !important;
 }
 
 .job-overlay-backdrop {

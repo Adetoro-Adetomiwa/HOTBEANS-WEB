@@ -7,7 +7,7 @@
     <title>HotBeans Web | Home</title>
     <link rel="stylesheet" href="Index.css">
     <style>
-        /* Minimal landing page styles */
+        /* Minimal landing page styles - Teal theme */
         body {
             margin: 0;
             padding: 0;
@@ -15,7 +15,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #e8e8e8 0%, #f0f0f0 100%);
+            background: linear-gradient(135deg, #0F3D3E 0%, #1A5556 100%);
             position: relative;
         }
         
@@ -29,18 +29,19 @@
             width: 120px;
             height: auto;
             margin-bottom: 2rem;
+            filter: brightness(0) invert(1);
         }
         
         .landing-hero h1 {
             font-size: 3rem;
-            color: #1a1a1a;
+            color: #ffffff;
             margin-bottom: 1rem;
             font-weight: 700;
         }
         
         .landing-hero p {
             font-size: 1.3rem;
-            color: #4a4a4a;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2.5rem;
             line-height: 1.6;
         }
@@ -51,8 +52,8 @@
             font-size: 1.2rem;
             font-weight: 600;
             color: #ffffff;
-            background: #3498DB;
-            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #ffffff;
             border-radius: 8px;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -60,9 +61,9 @@
         }
         
         .landing-btn:hover {
-            background: #2980B9;
+            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         @media (max-width: 768px) {
@@ -76,11 +77,6 @@
             
             .landing-logo {
                 width: 100px;
-            }
-            
-            .theme-toggle-landing {
-                top: 1rem;
-                right: 1rem;
             }
         }
     </style>

@@ -438,6 +438,54 @@ p {
     min-height: 450px;
 }
 
+/* About page cards */
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: clamp(2rem, 5vw, 3rem) 1.5rem;
+}
+
+.about-card {
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: opacity 0.12s ease-out, visibility 0.12s ease-out, box-shadow 0.3s ease;
+}
+
+.about-card.content-panel--active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.about-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.about-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .about-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 .content-block p {
     font-size: 1.15rem;
     line-height: 1.7;

@@ -1,21 +1,31 @@
 /* ============================================
-   HOTBEANS WEB – Professional IA, semantic, responsive
-   Three-shade neutral palette. No cards/boxes for Values, Mission, Benefits.
+   HOTBEANS WEB – Professional company presence
    ============================================ */
 
 :root {
-    --c-base: #1a1a1a;
-    --c-mid: #4a4a4a;
-    --c-soft: #e8e8e8;
-    --bg-main: #e8e8e8;
-    --bg-alt: #f0f0f0;
-    --bg-mission: #e0e0e0;
-    --text-primary: #1a1a1a;
-    --text-secondary: #4a4a4a;
-    --surface: #ffffff;
-    --surface-strong: #f7f7f7;
+    /* Brand colors */
+    --brand-teal: #0F3D3E;
+    --brand-teal-dark: #0B2E2F;
+    --accent-amber: #F2A65A;
+    
+    /* Backgrounds */
+    --bg-main: #F7F9F9;
+    --bg-tinted: #E8F1F1;
+    --bg-white: #FFFFFF;
+    
+    /* Text */
+    --text-primary: #1E1E1E;
+    --text-secondary: #4A4A4A;
+    
+    /* Legacy support */
+    --c-base: #1E1E1E;
+    --c-mid: #4A4A4A;
+    --c-soft: #E8F1F1;
+    --bg-alt: #F7F9F9;
+    --surface: #FFFFFF;
+    --surface-strong: #F7F9F9;
     --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-    --accent: #4a4a4a;
+    --accent: #F2A65A;
     --nav-bg: #1a1a1a;
     --nav-text: rgba(255,255,255,0.75);
     --nav-text-active: rgba(255,255,255,1);

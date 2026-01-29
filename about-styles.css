@@ -1,0 +1,132 @@
+/* ============================================
+   ABOUT PAGE - Professional Company Presence
+   ============================================ */
+
+/* Hero Section - Full Width Teal */
+.about-hero {
+    background: var(--brand-teal);
+    color: white;
+    padding: clamp(5rem, 12vw, 8rem) 1.5rem;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.about-hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: white;
+}
+
+.about-hero p {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--accent-amber);
+    margin: 0 auto;
+}
+
+/* Container */
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Section Styles */
+.about-section {
+    padding: clamp(5rem, 10vw, 7rem) 0;
+}
+
+.about-section-light {
+    background: var(--bg-main);
+    padding: clamp(5rem, 10vw, 7rem) 0;
+}
+
+.about-section-tinted {
+    background: var(--bg-tinted);
+    padding: clamp(5rem, 10vw, 7rem) 0;
+}
+
+.about-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-section p {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+/* White Card for Developer Section */
+.about-white-card {
+    background: var(--bg-white);
+    padding: clamp(2.5rem, 5vw, 3.5rem);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-white-card h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-white-card p {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* Accent Heading with Line */
+.about-accent-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.accent-line {
+    width: 4px;
+    height: 50px;
+    background: var(--accent-amber);
+    flex-shrink: 0;
+}
+
+.about-accent-heading h2 {
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+    }
+    
+    .about-section,
+    .about-section-light,
+    .about-section-tinted {
+        padding: clamp(3rem, 8vw, 4rem) 0;
+    }
+    
+    .accent-line {
+        height: 40px;
+    }
+}

@@ -150,23 +150,23 @@ p {
 /* Dropdown menu styles */
 .nav-dropdown {
     position: relative;
+    padding-bottom: 0.5rem;
 }
 
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 0.5rem);
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(42, 42, 42, 0.85);
-    backdrop-filter: blur(10px);
+    background: #1a1a1a;
     border-radius: var(--radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     list-style: none;
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
     margin: 0;
     width: max-content;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 .nav-dropdown:hover .dropdown-menu,
@@ -181,17 +181,17 @@ p {
 
 .dropdown-menu a {
     display: block;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     color: var(--nav-text);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border-bottom: none !important;
     transition: background-color 0.2s ease;
     white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
-    background: rgba(232, 232, 232, 0.15);
+    background: #2a2a2a;
 }
 
 .nav-links a {

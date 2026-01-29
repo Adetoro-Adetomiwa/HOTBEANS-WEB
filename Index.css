@@ -461,6 +461,8 @@ p {
     transition: opacity 0.12s ease-out, visibility 0.12s ease-out, transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 800px;
     width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .about-card.content-panel--active {
@@ -469,7 +471,7 @@ p {
 }
 
 .about-card:hover {
-    transform: translateY(-2px);
+    transform: translateX(-50%) translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 

@@ -112,9 +112,9 @@ p {
    ============================================ */
 
 .navbar {
-    background: var(--nav-bg);
+    background: var(--brand-teal);
     padding: 0.75rem 1.5rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--brand-teal-dark);
     position: fixed;
     top: 0;
     left: 0;
@@ -168,9 +168,9 @@ p {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #1a1a1a;
+    background: var(--brand-teal-dark);
     border-radius: var(--radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     list-style: none;
     padding: 0.3rem 0;
     margin: 0;
@@ -184,14 +184,10 @@ p {
     display: block;
 }
 
-.dropdown-menu li {
-    margin: 0;
-}
-
 .dropdown-menu a {
     display: block;
     padding: 0.5rem 0.75rem;
-    color: var(--nav-text);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-size: 0.9rem;
     border-bottom: none !important;
@@ -200,11 +196,12 @@ p {
 }
 
 .dropdown-menu a:hover {
-    background: #2a2a2a;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 1);
 }
 
 .nav-links a {
-    color: var(--nav-text);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -214,9 +211,13 @@ p {
     padding-bottom: 0.25rem;
 }
 
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
 .nav-links a.nav-current {
-    color: var(--nav-text);
-    border-bottom: 2px solid var(--nav-text-active);
+    color: rgba(255, 255, 255, 1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .nav-highlight {
@@ -228,10 +229,20 @@ p {
    ============================================ */
 
 .hero {
-    background: var(--bg-main);
+    background: var(--brand-teal-light);
     padding: clamp(3rem, 8vw, 5rem) 1.5rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--brand-teal-dark);
     margin-top: 60px;
+    color: white;
+}
+
+.hero h1,
+.hero h2 {
+    color: white;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .hero-home {

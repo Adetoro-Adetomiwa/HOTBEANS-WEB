@@ -7,22 +7,29 @@
     <title>HotBeans Web | Home</title>
     <link rel="stylesheet" href="Index.css">
     <style>
-        /* Minimal landing page styles - Teal theme */
+        /* Landing page hero section with teal */
         body {
             margin: 0;
             padding: 0;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            background: var(--bg-main);
+        }
+        
+        .landing-hero-section {
+            background: linear-gradient(135deg, #0F3D3E 0%, #1A5556 100%);
+            padding: clamp(8rem, 15vw, 12rem) 1.5rem clamp(5rem, 10vw, 8rem);
+            text-align: center;
+            flex: 1;
+            display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #0F3D3E 0%, #1A5556 100%);
-            position: relative;
         }
         
         .landing-container {
-            text-align: center;
-            padding: 2rem;
             max-width: 800px;
+            margin: 0 auto;
         }
         
         .landing-logo {
@@ -66,6 +73,33 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
+        .landing-content {
+            padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+            background: var(--bg-main);
+            flex: 1;
+        }
+        
+        .landing-content-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .landing-content-section h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .landing-content-section p {
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
         @media (max-width: 768px) {
             .landing-hero h1 {
                 font-size: 2rem;
@@ -78,18 +112,31 @@
             .landing-logo {
                 width: 100px;
             }
+            
+            .landing-hero-section {
+                padding: clamp(5rem, 10vw, 7rem) 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="landing-container">
-    <img src="assets/logo.svg" alt="HotBeans Web" class="landing-logo">
-    <div class="landing-hero">
-        <h1>Join Our Web Development Team</h1>
-        <p>Join HotBeans Web and contribute to real client projects as part of a professional development team. We are looking for skilled web developers ready to apply their knowledge in a real working environment.</p>
-        <a href="about.html" class="landing-btn">About HotBeans</a>
+<div class="landing-hero-section">
+    <div class="landing-container">
+        <img src="assets/logo.svg" alt="HotBeans Web" class="landing-logo">
+        <div class="landing-hero">
+            <h1>Join Our Web Development Team</h1>
+            <p>Join HotBeans Web and contribute to real client projects as part of a professional development team. We are looking for skilled web developers ready to apply their knowledge in a real working environment.</p>
+            <a href="about.html" class="landing-btn">About HotBeans</a>
+        </div>
     </div>
+</div>
+
+<div class="landing-content">
+    <section class="landing-content-section">
+        <h2>We Build Real Solutions</h2>
+        <p>HotBeans Web delivers modern web development services to clients who demand quality. We're also growing a team of capable developers who want to start their careers with real impact and mentorship.</p>
+    </section>
 </div>
 
 <script src="Index.js"></script>

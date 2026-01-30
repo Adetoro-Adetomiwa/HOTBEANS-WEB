@@ -9,6 +9,7 @@ const JOB_DATA = {
         salary: '£24,000 - £28,000 per annum',
         location: 'Milton Keynes (2 days office, 3 days remote)',
         summary: 'Entry-level role focused on building responsive user interfaces alongside designers and senior developers.',
+        postedDate: new Date(Date.now() - (Math.floor(Math.random() * 14) + 1) * 24 * 60 * 60 * 1000).toISOString(),
         requirements: [
             'GCSE/A-Levels or equivalent or proven self-taught ability.',
             'Portfolio with 3+ projects showing HTML, CSS, and JavaScript.',
@@ -28,6 +29,7 @@ const JOB_DATA = {
         salary: '£32,000 - £38,000 per annum',
         location: 'Milton Keynes (fully remote)',
         summary: 'Lead the delivery of performant, accessible interfaces for client sites.',
+        postedDate: new Date(Date.now() - (Math.floor(Math.random() * 14) + 1) * 24 * 60 * 60 * 1000).toISOString(),
         requirements: [
             '2+ years professional experience with modern front-end frameworks.',
             'Expertise in responsive design and CSS architecture.',
@@ -47,6 +49,7 @@ const JOB_DATA = {
         salary: '£28,000 - £34,000 per annum',
         location: 'Milton Keynes (3 days office, 2 days remote)',
         summary: 'Develop and maintain secure, scalable server-side applications and APIs.',
+        postedDate: new Date(Date.now() - (Math.floor(Math.random() * 14) + 1) * 24 * 60 * 60 * 1000).toISOString(),
         requirements: [
             '1–2 years backend experience in Node.js, Python, or PHP.',
             'Understanding of database design and optimisation.',
@@ -755,6 +758,21 @@ function closeCourseOverlay() {
 
 let activeJobOverlay = null;
 
+function getTimeAgo(daysAgo) {
+    if (daysAgo < 1) {
+        const hoursAgo = Math.floor(daysAgo * 24);
+        return hoursAgo <= 1 ? 'Posted 1 hour ago' : `Posted ${hoursAgo} hours ago`;
+    } else if (daysAgo < 7) {
+        return daysAgo === 1 ? 'Posted 1 day ago' : `Posted ${Math.floor(daysAgo)} days ago`;
+    } else if (daysAgo < 30) {
+        const weeksAgo = Math.floor(daysAgo / 7);
+        return weeksAgo === 1 ? 'Posted 1 week ago' : `Posted ${weeksAgo} weeks ago`;
+    } else {
+        const monthsAgo = Math.floor(daysAgo / 30);
+        return monthsAgo === 1 ? 'Posted 1 month ago' : `Posted ${monthsAgo} months ago`;
+    }
+}
+
 function attachJobCardNavigation() {
     const jobCards = document.querySelectorAll('.job-card[data-job-id]');
     if (!jobCards.length) return;
@@ -787,6 +805,10 @@ function openJobOverlay(card, jobId) {
     const type = card.querySelector('.job-type')?.textContent || '';
     const details = card.querySelector('.job-details')?.innerHTML || '';
     const applyLink = card.querySelector('.btn-secondary')?.href || `apply.html?job=${jobId}`;
+    
+    // Get posted time from JOB_DATA
+    const jobData = JOB_DATA[jobId];
+    const timeAgo = jobData?.postedDaysAgo ? getTimeAgo(jobData.postedDaysAgo) : 'Posted recently';
 
     // Create overlay container
     const overlay = document.createElement('div');
@@ -796,6 +818,7 @@ function openJobOverlay(card, jobId) {
             <button class="job-overlay-close" aria-label="Close job details">&times;</button>
             <div class="job-overlay-header">
                 <h2>${title}</h2>
+                <div class="job-posted-time">${timeAgo}</div>
                 <div class="job-overlay-meta">
                     <span>${location}</span>
                     <span>${type}</span>

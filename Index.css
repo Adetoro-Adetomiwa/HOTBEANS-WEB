@@ -877,7 +877,7 @@ p {
 .trainee-role {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--accent);
+    color: #000;
     margin-bottom: 0.75rem !important;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -961,6 +961,10 @@ p {
     line-height: 1.75;
     color: var(--text-secondary);
     margin-bottom: 1rem;
+}
+
+.journey-section a {
+    color: #000 !important;
 }
 
 /* ============================================

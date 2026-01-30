@@ -123,6 +123,7 @@ p {
     right: 0;
     z-index: 100;
     transition: none;
+    overflow: visible;
 }
 
 .nav-container {
@@ -152,54 +153,50 @@ p {
     flex: 1;
     padding: 0;
     margin: 0;
+    position: static;
 }
 
 .nav-links li {
     list-style: none;
 }
 
-/* Dropdown menu styles */
+/* Parent must be the Home nav item */
 .nav-dropdown {
-    position: relative;
-    display: block;
+    position: relative;   /* anchor for dropdown */
 }
 
+/* The dropdown itself */
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 100%;            /* EXACTLY under Home */
+    left: 0;              /* aligned with Home text */
     background: var(--brand-teal);
-    border-radius: 0;
-    box-shadow: none;
     list-style: none;
     padding: 0;
     margin: 0;
     width: max-content;
-    z-index: 9999;
+    z-index: 10000;
 }
 
-.nav-dropdown:hover .dropdown-menu,
-.dropdown-menu:hover,
-.nav-dropdown.dropdown-active .dropdown-menu {
+/* Show on hover */
+.nav-dropdown:hover .dropdown-menu {
     display: block;
 }
 
+/* Links inside */
 .dropdown-menu a {
     display: block;
-    padding: 0.75rem 1.1rem;
+    padding: 0.6rem 1.1rem;  /* slightly tighter than nav */
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    border-bottom: none !important;
-    transition: color 0.2s ease;
     white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
-    background: none;
-    color: rgba(255, 255, 255, 1);
+    color: #ffffff;
 }
 
 .nav-links a {

@@ -625,27 +625,34 @@ function switchToTab(sectionId) {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const contentPanels = document.querySelectorAll('.content-panel');
     
-    if (!tabButtons.length || !contentPanels.length) return;
+    // If tab system exists, use it
+    if (tabButtons.length && contentPanels.length) {
+        // Remove active class from all buttons and panels
+        tabButtons.forEach(btn => {
+            btn.classList.remove('tab-btn--active');
+            btn.setAttribute('aria-selected', 'false');
+        });
+        contentPanels.forEach(panel => {
+            panel.classList.remove('content-panel--active');
+        });
 
-    // Remove active class from all buttons and panels
-    tabButtons.forEach(btn => {
-        btn.classList.remove('tab-btn--active');
-        btn.setAttribute('aria-selected', 'false');
-    });
-    contentPanels.forEach(panel => {
-        panel.classList.remove('content-panel--active');
-    });
-
-    // Add active class to clicked button and corresponding panel
-    const targetButton = document.querySelector(`.tab-btn[data-section="${sectionId}"]`);
-    if (targetButton) {
-        targetButton.classList.add('tab-btn--active');
-        targetButton.setAttribute('aria-selected', 'true');
-    }
-    
-    const targetPanel = document.getElementById(sectionId);
-    if (targetPanel) {
-        targetPanel.classList.add('content-panel--active');
+        // Add active class to clicked button and corresponding panel
+        const targetButton = document.querySelector(`.tab-btn[data-section="${sectionId}"]`);
+        if (targetButton) {
+            targetButton.classList.add('tab-btn--active');
+            targetButton.setAttribute('aria-selected', 'true');
+        }
+        
+        const targetPanel = document.getElementById(sectionId);
+        if (targetPanel) {
+            targetPanel.classList.add('content-panel--active');
+        }
+    } else {
+        // No tab system, just scroll to the section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 }
 

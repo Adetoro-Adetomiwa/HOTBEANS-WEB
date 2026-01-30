@@ -967,7 +967,13 @@ p {
 }
 
 .journey-section a {
-    color: #000 !important;
+    color: var(--action-primary) !important;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+}
+
+.journey-section a:hover {
+    text-decoration: underline;
 }
 
 /* ============================================
@@ -1103,8 +1109,14 @@ p {
 }
 
 .trainee-note a {
-    color: #000 !important;
+    color: var(--action-primary) !important;
     font-weight: 600;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+}
+
+.trainee-note a:hover {
+    text-decoration: underline;
 }
 
 /* Legacy trainee-profile styles (for compatibility) */

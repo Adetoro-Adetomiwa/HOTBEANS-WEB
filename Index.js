@@ -1321,3 +1321,67 @@ function initCourseSearch() {
         courseCountEl.textContent = visibleCount;
     });
 }
+
+// ============================================
+// HAMBURGER MENU – Mobile Navigation
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function() {
+            hamburgerBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Update aria-expanded attribute
+            const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+            hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
+            
+            // Close all dropdowns when menu is closed
+            if (!hamburgerBtn.classList.contains('active')) {
+                navDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('dropdown-active');
+                });
+            }
+        });
+
+        // Handle dropdown menus in mobile view
+        navDropdowns.forEach(dropdown => {
+            const dropdownLink = dropdown.querySelector('a');
+            if (dropdownLink) {
+                dropdownLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('dropdown-active');
+                    }
+                });
+            }
+        });
+
+        // Close menu when a link is clicked
+        const allLinks = navLinks.querySelectorAll('a');
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Don't close if it's a dropdown toggle
+                const parent = this.parentElement;
+                if (!parent.classList.contains('nav-dropdown') || window.innerWidth > 768) {
+                    if (hamburgerBtn.classList.contains('active') && !parent.classList.contains('nav-dropdown')) {
+                        hamburgerBtn.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        hamburgerBtn.setAttribute('aria-expanded', 'false');
+                        navDropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('dropdown-active');
+                        });
+                    }
+                }
+            });
+        });
+    }
+});
+
+// ============================================
+
+
+

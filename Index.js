@@ -1183,8 +1183,43 @@ function initJobFilter() {
     totalJobsEl.textContent = totalJobs;
     jobCountEl.textContent = totalJobs;
     
-    filterSelect.addEventListener('change', function() {
-        const filterValue = this.value.toLowerCase();
+    // Custom dropdown functionality
+    const trigger = filterSelect.querySelector('.custom-select-trigger');
+    const options = filterSelect.querySelectorAll('.custom-option');
+    
+    // Toggle dropdown
+    trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        filterSelect.classList.toggle('open');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        filterSelect.classList.remove('open');
+    });
+    
+    // Handle option selection
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            const text = this.textContent;
+            
+            // Update trigger text
+            trigger.querySelector('span').textContent = text;
+            
+            // Update selected state
+            options.forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+            
+            // Close dropdown
+            filterSelect.classList.remove('open');
+            
+            // Filter jobs
+            filterJobs(value.toLowerCase());
+        });
+    });
+    
+    function filterJobs(filterValue) {
         let visibleCount = 0;
         
         jobCards.forEach(card => {
@@ -1211,7 +1246,7 @@ function initJobFilter() {
         });
         
         jobCountEl.textContent = visibleCount;
-    });
+    }
 }
 
 // ============================================

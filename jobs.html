@@ -49,12 +49,20 @@
             <div class="filter-controls">
                 <div class="filter-group">
                     <label for="job-type-filter" class="filter-label">Filter by work type:</label>
-                    <select id="job-type-filter" class="filter-select">
-                        <option value="all">All Types</option>
-                        <option value="remote">Remote</option>
-                        <option value="hybrid">Hybrid</option>
-                        <option value="physical">On-Site</option>
-                    </select>
+                    <div class="custom-select-wrapper">
+                        <div class="custom-select" id="job-type-filter">
+                            <div class="custom-select-trigger">
+                                <span>All Types</span>
+                                <div class="arrow"></div>
+                            </div>
+                            <div class="custom-options">
+                                <div class="custom-option selected" data-value="all">All Types</div>
+                                <div class="custom-option" data-value="remote">Remote</div>
+                                <div class="custom-option" data-value="hybrid">Hybrid</div>
+                                <div class="custom-option" data-value="physical">On-Site</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="filter-stats" id="job-filter-stats">
                     Showing <strong id="job-count">0</strong> of <strong id="total-jobs">0</strong> jobs

@@ -171,8 +171,8 @@ p {
     left: 50%;
     transform: translateX(-50%);
     background: var(--brand-teal);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    box-shadow: none;
     list-style: none;
     padding: 0.5rem 0;
     margin: 0;

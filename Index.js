@@ -758,17 +758,23 @@ function closeCourseOverlay() {
 
 let activeJobOverlay = null;
 
-function getTimeAgo(daysAgo) {
-    if (daysAgo < 1) {
-        const hoursAgo = Math.floor(daysAgo * 24);
+function getTimeAgo(postedDate) {
+    const now = new Date();
+    const posted = new Date(postedDate);
+    const diffMs = now - posted;
+    const diffDays = diffMs / (1000 * 60 * 60 * 24);
+    
+    if (diffDays < 1) {
+        const hoursAgo = Math.floor(diffMs / (1000 * 60 * 60));
         return hoursAgo <= 1 ? 'Posted 1 hour ago' : `Posted ${hoursAgo} hours ago`;
-    } else if (daysAgo < 7) {
-        return daysAgo === 1 ? 'Posted 1 day ago' : `Posted ${Math.floor(daysAgo)} days ago`;
-    } else if (daysAgo < 30) {
-        const weeksAgo = Math.floor(daysAgo / 7);
+    } else if (diffDays < 7) {
+        const days = Math.floor(diffDays);
+        return days === 1 ? 'Posted 1 day ago' : `Posted ${days} days ago`;
+    } else if (diffDays < 30) {
+        const weeksAgo = Math.floor(diffDays / 7);
         return weeksAgo === 1 ? 'Posted 1 week ago' : `Posted ${weeksAgo} weeks ago`;
     } else {
-        const monthsAgo = Math.floor(daysAgo / 30);
+        const monthsAgo = Math.floor(diffDays / 30);
         return monthsAgo === 1 ? 'Posted 1 month ago' : `Posted ${monthsAgo} months ago`;
     }
 }
@@ -808,7 +814,7 @@ function openJobOverlay(card, jobId) {
     
     // Get posted time from JOB_DATA
     const jobData = JOB_DATA[jobId];
-    const timeAgo = jobData?.postedDaysAgo ? getTimeAgo(jobData.postedDaysAgo) : 'Posted recently';
+    const timeAgo = jobData?.postedDate ? getTimeAgo(jobData.postedDate) : 'Posted recently';
 
     // Create overlay container
     const overlay = document.createElement('div');

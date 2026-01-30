@@ -9,6 +9,11 @@
     --brand-teal-light: #1A5556;
     --brand-teal-hero: #2A7078;
     
+    /* NEW ACTION COLOR SYSTEM */
+    --action-primary: #F4A261;
+    --action-primary-hover: #E76F51;
+    --action-secondary-bg: #E8F3F3;
+    
     /* Backgrounds */
     --bg-main: #F7F9F9;
     --bg-tinted: #E8F1F1;
@@ -17,6 +22,10 @@
     /* Text */
     --text-primary: #1E1E1E;
     --text-secondary: #4A4A4A;
+    --text-dark-teal: #0F4C4C;
+    
+    /* NEW BORDERS */
+    --border-subtle: #D9D9D9;
     
     /* Legacy support */
     --c-base: #1E1E1E;
@@ -659,9 +668,77 @@ p {
 }
 
 /* ============================================
-   BUTTONS
+   BUTTONS - NEW COLOR SYSTEM
    ============================================ */
 
+/* PRIMARY ACTION BUTTONS (Orange solid) - Apply, Enrol, Send Application */
+.btn-primary-action {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--action-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn-primary-action:hover {
+    background: var(--action-primary-hover);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
+}
+
+/* SECONDARY ACTION BUTTONS (Outlined orange) - View Details */
+.btn-secondary-action {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--action-primary);
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 2px solid var(--action-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn-secondary-action:hover {
+    background: var(--action-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 162, 97, 0.25);
+}
+
+/* NEUTRAL UTILITY BUTTONS (Teal/grey) - Close, uploads, etc */
+.btn-utility {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--action-secondary-bg);
+    color: var(--text-dark-teal);
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.btn-utility:hover {
+    background: #DDEAEA;
+    color: var(--text-dark-teal);
+}
+
+/* LEGACY PRIMARY BUTTON - keeping for compatibility, should migrate to btn-primary-action */
 .btn-primary {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -682,6 +759,21 @@ p {
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(15, 61, 62, 0.25);
+}
+
+/* View Details buttons on cards - convert to outlined orange */
+.job-card-actions .btn-primary,
+.course-card .btn-primary {
+    background: transparent;
+    color: var(--action-primary);
+    border: 2px solid var(--action-primary);
+}
+
+.job-card-actions .btn-primary:hover,
+.course-card .btn-primary:hover {
+    background: var(--action-primary);
+    color: white;
+    border-color: var(--action-primary);
 }
 
 /* ============================================
@@ -1611,13 +1703,13 @@ body.modal-open {
     display: block;
     margin: 2rem auto 0;
     text-align: center;
-    background: var(--brand-teal) !important;
+    background: var(--action-primary) !important;
     color: white !important;
     border: none !important;
 }
 
 .course-overlay-enroll:hover {
-    background: var(--brand-teal-dark) !important;
+    background: var(--action-primary-hover) !important;
     color: white !important;
 }
 
@@ -1676,12 +1768,12 @@ body.modal-open {
     right: 1.5rem;
     width: 40px;
     height: 40px;
-    border: 1px solid var(--border);
-    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    background: var(--action-secondary-bg);
     border-radius: var(--radius);
     cursor: pointer;
     font-size: 1.75rem;
-    color: var(--text-primary);
+    color: var(--text-dark-teal);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1690,7 +1782,7 @@ body.modal-open {
 }
 
 .job-overlay-close:hover {
-    background: var(--surface-strong);
+    background: #DDEAEA;
     transform: rotate(90deg);
 }
 
@@ -1731,6 +1823,14 @@ body.modal-open {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s ease;
+    background: var(--action-primary);
+    color: white;
+}
+
+.job-overlay-apply:hover {
+    background: var(--action-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
 }
 
 .job-overlay-content {
@@ -2829,6 +2929,12 @@ body.modal-open {
 
 .filter-select option {
     padding: 0.5rem;
+}
+
+.filter-select option:checked,
+.filter-select option:hover {
+    background: var(--brand-teal) !important;
+    color: white !important;
 }
 
 .filter-input::placeholder {

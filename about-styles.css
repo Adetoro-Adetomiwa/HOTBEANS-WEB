@@ -48,15 +48,16 @@
 /* Section Styles */
 .about-section {
     padding: clamp(5rem, 10vw, 7rem) 0;
+    background: #F0FFFE;
 }
 
 .about-section-light {
-    background: var(--bg-main);
+    background: #F0FFFE;
     padding: clamp(5rem, 10vw, 7rem) 0;
 }
 
 .about-section-tinted {
-    background: var(--bg-tinted);
+    background: #E8F7F5;
     padding: clamp(5rem, 10vw, 7rem) 0;
 }
 

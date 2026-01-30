@@ -168,15 +168,15 @@ p {
     display: none;
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--brand-teal-dark);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    left: 0;
+    right: 0;
+    background: var(--brand-teal);
+    border-radius: 0;
+    box-shadow: none;
     list-style: none;
-    padding: 0.3rem 0;
+    padding: 0;
     margin: 0;
-    width: max-content;
+    width: 100%;
     z-index: 9999;
 }
 
@@ -188,17 +188,18 @@ p {
 
 .dropdown-menu a {
     display: block;
-    padding: 0.5rem 0.75rem;
+    padding: 0.65rem 1.5rem;
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     border-bottom: none !important;
     transition: background-color 0.2s ease;
     white-space: nowrap;
+    font-weight: 600;
 }
 
 .dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: rgba(255, 255, 255, 1);
 }
 

@@ -146,10 +146,10 @@ p {
 .nav-links {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
     flex: 1;
     padding: 0;
     margin: 0;
@@ -160,39 +160,41 @@ p {
     list-style: none;
 }
 
-/* Parent must be the Home nav item */
+/* Dropdown positioning */
 .nav-dropdown {
-    position: relative;   /* anchor for dropdown */
+    position: relative;
 }
 
-/* The dropdown itself */
 .dropdown-menu {
-    display: none;
     position: absolute;
-    top: 100%;            /* EXACTLY under Home */
-    left: 0;              /* aligned with Home text */
+    top: 100%;
+    left: 0;
+    display: none;
     background: var(--brand-teal);
-    list-style: none;
     padding: 0;
     margin: 0;
-    width: max-content;
+    list-style: none;
     z-index: 10000;
+    width: max-content;
 }
 
-/* Show on hover */
 .nav-dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Links inside */
+.dropdown-menu li {
+    list-style: none;
+}
+
 .dropdown-menu a {
     display: block;
-    padding: 0.6rem 1.1rem;  /* slightly tighter than nav */
+    padding: 0.6rem 1.1rem;
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
     white-space: nowrap;
+    border-bottom: none !important;
 }
 
 .dropdown-menu a:hover {
